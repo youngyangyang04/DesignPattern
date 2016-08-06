@@ -4,7 +4,10 @@
 > Mail:sunxiuyang04@gmail.com 
 > Created Time: Sat Aug  6 20:49:31 2016
  ************************************************************************/
-
+/*Factory
+ *Definition:A utility class that creates an instance of a class from a family of derived classes
+ *The Factory Design Pattern is useful in a situation that requires the creation of many different types of objects, all derived from a common base type. The Factory Method defines a method for creating the objects, which subclasses can then override to specify the derived type that will be created. Thus, at run time, the Factory Method can be passed a description of a desired object (e.g., a string read from user input) and return a base class pointer to a new instance of that object. The pattern works best when a well-designed interface is used for the base class, so there is no need to cast the returned object.
+ */
 #include<iostream>
 using namespace std;
 class Computer
