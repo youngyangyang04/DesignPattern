@@ -42,7 +42,7 @@ public:
 
 	}
 private:
-	string s;
+	string name;
 };
 class Center: public Player{
 public:
@@ -83,7 +83,13 @@ public:
 	ForeignCenter(string name){
 		this->name = name;
 	}
-	ForeignCenter();
+	ForeignCenter() {
+
+	};
+
+	~ForeignCenter() {
+
+	};
 	
 private:
 	string name;
