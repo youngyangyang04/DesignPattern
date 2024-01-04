@@ -46,6 +46,8 @@ public:
 
 	}
 };
+
+//单个工厂模式，静态工厂方法模式
 class ComputerFactory
 {
 public:
@@ -58,6 +60,29 @@ public:
 		return NULL;
 	}
 };
+
+//多个工厂模式
+class ComputerMultiFactory {
+public:
+  	Computer *NewMultiLaptop () {
+    	return new Laptop();
+  	}
+  	Computer *NewMultiDesktop() {
+    	return new Desktop();
+  	}
+};
+
+//静态工厂方法模式
+class ComputerStaticFactory {
+public:
+  	static Computer *NewStaticLaptop() {
+    	return new Laptop();
+  	}
+  	static Computer *NewStaticDesktop() {
+    	return new Desktop();
+  	} 
+};
+
 int main()
 {
 	Computer *computer1 = ComputerFactory::NewComputer("laptop");
@@ -66,5 +91,17 @@ int main()
 	Computer *computer2 = ComputerFactory::NewComputer("desktop");
 	computer2->price();
 	computer2->description();
+  	cout << "----------" << endl;
+
+	ComputerMultiFactory *factory = new ComputerMultiFactory();
+	Computer *multiLaptop = factory->NewMultiLaptop();
+	multiLaptop->price();
+	multiLaptop->description();
+	cout << "----------" << endl;
+
+	Computer *staticLaptop = ComputerStaticFactory::NewStaticLaptop();
+	staticLaptop->price();
+	staticLaptop->description();
+	cout << "----------" << endl;
 }
 
